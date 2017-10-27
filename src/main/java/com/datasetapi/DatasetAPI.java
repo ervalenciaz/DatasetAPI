@@ -30,6 +30,7 @@ public class DatasetAPI {
     
     @RequestMapping(value = "/{licensePlate}", method = RequestMethod.GET)
     public ResponseEntity<Vehicle> getVehicleByLicensePlate(@PathVariable("licensePlate") String licensePlate) {
+        System.out.println("RECIBE EL REQUEST!");
         vehicleDao = new VehicleDAO();
         Vehicle vehicle = vehicleDao.getVehicleByLicensePlate(licensePlate);
         
