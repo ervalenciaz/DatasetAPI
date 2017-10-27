@@ -23,7 +23,7 @@ public class ConnectionHandler {
     
     private final String dbms = "mysql";
     private final String serverName = host.orElse("locahost");
-    private final String portNumber = port.orElse("8080");
+    private final String portNumber = port.orElse("3306");
     private final String dbName = "autoclaim";
     private final String userName = "root";
     private final String password = host.orElse("localhost").equals("localhost") ? "root" : "";
