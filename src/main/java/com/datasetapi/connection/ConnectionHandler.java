@@ -41,7 +41,7 @@ public class ConnectionHandler {
             if (this.dbms.equals("mysql")) {
                 String url =  "jdbc:" + this.dbms + "://"
                         + this.serverName
-                        + ":" + this.portNumber + "/";
+                        + ":" + this.portNumber + "/" + dbName;
                         
                 System.out.println("Connecting to... " + url);
                 conn = DriverManager.getConnection(url, connectionProps);
