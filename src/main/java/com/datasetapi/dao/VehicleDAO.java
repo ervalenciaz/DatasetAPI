@@ -84,7 +84,8 @@ public class VehicleDAO implements IVehicleDAO {
         
         try {
             conn = handler.getConnection();
-            String sql = "SELECT * FROM VEHICLES WHERE LICENSEPLATE = '" + licensePlate + "'";
+            String sql = "SELECT * FROM VEHICLE WHERE LICENSE_PLATE = '" + licensePlate + "'";
+            System.out.println(sql);
             Statement statement = conn.createStatement();
             
             if(statement.execute(sql)) {
@@ -92,6 +93,7 @@ public class VehicleDAO implements IVehicleDAO {
             }
             
             while(rs.next()) {
+                System.out.println("TIENE ELEMENTOS!!!");
                 vehicle = new Vehicle();
 
                 vehicle.setId(rs.getLong("id"));
@@ -100,7 +102,7 @@ public class VehicleDAO implements IVehicleDAO {
                 vehicle.setPersons(rs.getString("persons"));
                 vehicle.setLugBoot(rs.getString("lug_boot"));
                 vehicle.setSafety(rs.getString("safety"));
-                vehicle.setLicensePlate(rs.getString("licensePlate"));
+                vehicle.setLicensePlate(rs.getString("license_plate"));
                 vehicle.setOwner(rs.getLong("owner"));
                 vehicle.setBrand(rs.getString("brand"));
                 vehicle.setModel(rs.getString("model"));
